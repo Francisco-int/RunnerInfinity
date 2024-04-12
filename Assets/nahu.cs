@@ -8,6 +8,8 @@ public class nahu : MonoBehaviour
 
     public float speed;
     [SerializeField] Rigidbody rb;
+    bool limitX;
+    bool LimitXN;
 
 
     // Start is called before the first frame update
@@ -30,14 +32,27 @@ public class nahu : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             rb.AddForce(new Vector3(speed, 0f, 0f), ForceMode.Acceleration);
+            Limit();
         }
         if (Input.GetKey(KeyCode.S))
         {
             rb.AddForce(new Vector3(-speed, 0f, 0f), ForceMode.Acceleration);
+            Limit();
         }
-        if (transform.position.x < -0.30)
+        if (transform.position.y < -2)
         {
             SceneManager.LoadScene(0);
+        }
+    }
+    void Limit()
+    {
+        if(transform.position.x < -14.96)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > -8.69)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
     }
 }
