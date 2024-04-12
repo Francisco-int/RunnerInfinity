@@ -24,13 +24,19 @@ public class MovePlataform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x < -1 && spawnPlataformAble)
+        if(transform.position.x < 0 && spawnPlataformAble)
         {
             SendSpawnMessage();
             spawnPlataformAble = false;
             Debug.Log("spawn");
         }
         transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
+        if (transform.position.x < -31.8558)
+        {
+            GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            gameManager.PlataformsPassed();
+            Destroy(gameObject);
+        }
     }
 
     void SendSpawnMessage()

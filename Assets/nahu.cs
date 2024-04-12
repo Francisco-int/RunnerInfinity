@@ -1,15 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class nahu : MonoBehaviour
 {
 
-    float movimientoHorizontal;
-    float movimientoVertical;
     public float speed;
     [SerializeField] Rigidbody rb;
-    float movimientoZ;
 
 
     // Start is called before the first frame update
@@ -21,7 +19,6 @@ public class nahu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(new Vector3(0f, 0f, speed), ForceMode.Acceleration);
@@ -38,8 +35,9 @@ public class nahu : MonoBehaviour
         {
             rb.AddForce(new Vector3(-speed, 0f, 0f), ForceMode.Acceleration);
         }
+        if (transform.position.x < -0.30)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
-
-    
-
 }
