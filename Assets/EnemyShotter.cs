@@ -26,6 +26,5 @@ public class EnemyShotter : MonoBehaviour
         Rigidbody rb = newBala.GetComponent<Rigidbody>();
         rb.AddForce(newBala.transform.up * balaForce, ForceMode.Impulse);
 
-
     }
 }

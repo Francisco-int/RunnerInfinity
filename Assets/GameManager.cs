@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -8,11 +9,14 @@ public class GameManager : MonoBehaviour
 
     public int plataformsPassed;
     public Text uiPlataforms;
+    public GameObject shotters;
+    nahu player;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        shotters.SetActive(false);
+        player = GameObject.Find("nahu").GetComponent<nahu>();
     }
 
     // Update is called once per frame
@@ -31,6 +35,10 @@ public class GameManager : MonoBehaviour
     }
     void SpawnShotter()
     {
-
+        shotters.SetActive(true);
+    }
+    public void StarGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }
