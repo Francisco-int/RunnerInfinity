@@ -14,7 +14,7 @@ public class nahu : MonoBehaviour
     public Text gameOver;
     public GameObject buttonRestart;
 
-    //ff
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -29,32 +29,27 @@ public class nahu : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            rb.AddForce(new Vector3(0f, 0f, speed), ForceMode.Acceleration);
+            rb.AddForce(new Vector3(0f, 0f, speed));
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rb.AddForce(new Vector3(0f, 0f, -speed), ForceMode.Acceleration);
+            rb.AddForce(new Vector3(0f, 0f, -speed));
         }
         if (Input.GetKey(KeyCode.W))
         {
-            rb.AddForce(new Vector3(speed, 0f, 0f), ForceMode.Acceleration);
-            Limit();
+            rb.AddForce(new Vector3(speed, 0f, 0f));
         }
         if (Input.GetKey(KeyCode.S))
         {
-            rb.AddForce(new Vector3(-speed, 0f, 0f), ForceMode.Acceleration);
+            rb.AddForce(new Vector3(-speed, 0f, 0f));
         }
         if (transform.position.y < -5 || transform.position.x < -21.598)
         {
             UIGameOver();
         }
-    }
-
-    void Limit()
-    {
-        if(transform.position.x > 0)
+        if (transform.position.x > -8)
         {
-            transform.position = new Vector3(0f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-8f, transform.position.y, transform.position.z);
         }
     }
     void UIGameOver()

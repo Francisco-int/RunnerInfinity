@@ -10,13 +10,11 @@ public class GameManager : MonoBehaviour
     public int plataformsPassed;
     public Text uiPlataforms;
     public GameObject shotters;
-    nahu player;
 
     // Start is called before the first frame update
     void Start()
     {
         shotters.SetActive(false);
-        player = GameObject.Find("nahu").GetComponent<nahu>();
     }
 
     // Update is called once per frame

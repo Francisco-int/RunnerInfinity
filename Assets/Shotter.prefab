@@ -153,7 +153,7 @@ MonoBehaviour:
   bala: {fileID: 2353179546690671477, guid: 7abac7e206831804c841ae87900cb7f3, type: 3}
   shotCoolDown: 1
   shotPoint: {fileID: 6061282689104507841}
-  balaForce: 20
+  balaForce: 10
 --- !u!1 &4472873110563951417
 GameObject:
   m_ObjectHideFlags: 0
