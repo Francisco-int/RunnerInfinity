@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2597437652111734818}
   - component: {fileID: 2939189822083750335}
   - component: {fileID: 7156497794389000627}
-  - component: {fileID: 6344539961246190640}
+  - component: {fileID: 3034087943653105300}
   m_Layer: 0
   m_Name: Shotter
   m_TagString: Untagged
@@ -107,7 +107,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6344539961246190640
+--- !u!114 &3034087943653105300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

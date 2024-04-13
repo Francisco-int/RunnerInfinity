@@ -123,6 +123,86 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &29212367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 29212368}
+  - component: {fileID: 29212370}
+  - component: {fileID: 29212369}
+  m_Layer: 5
+  m_Name: Text (Legacy) (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &29212368
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29212367}
+  m_LocalRotation: {x: -0, y: -0, z: -0.07930847, w: 0.99685013}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 895316537}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -9.098}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 341, y: -131}
+  m_SizeDelta: {x: 277.579, y: 158.9495}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &29212369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29212367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.06612677, g: 0.0047169924, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 15
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 45
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: And a last thing don't stay too much time behind, the plataforms wil be
+    disapering so you can fall. Good Luck!!
+--- !u!222 &29212370
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29212367}
+  m_CullTransparentMesh: 1
 --- !u!1 &261537892
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -9.098}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 356.3278, y: -28.6877}
+  m_AnchoredPosition: {x: 362, y: 5}
   m_SizeDelta: {x: 277.579, y: 158.9495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &877308781
@@ -515,7 +595,7 @@ MonoBehaviour:
   m_Text: Hello Runner, do not let the killer (the red wall) touch you and be brave
     after you passed 5 plataforms will appear 4 Shotters. Ah in case you get in trouble
     use the ThroughX (pressing the space), it will make the bullet from Shotter fo
-    through yourself, but you won't be able to go forward and backward. Good Luck!!
+    through yourself, but you won't be able to go forward and backward.
 --- !u!222 &877308782
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -620,6 +700,7 @@ RectTransform:
   m_Children:
   - {fileID: 1590471682}
   - {fileID: 877308780}
+  - {fileID: 29212368}
   - {fileID: 754874551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
