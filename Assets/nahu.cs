@@ -9,11 +9,19 @@ public class nahu : MonoBehaviour
 {
 
     public float speed;
+    public float pullForce;
     [SerializeField] Rigidbody rb;
 
     public Text gameOver;
     public GameObject buttonRestart;
 
+    public Material transparent;
+    public Material normal;
+    public Renderer playerRenderer;
+    public MeshRenderer playerMeshRenderer;
+
+    bool controls;
+    bool moveAble;
    
     // Start is called before the first frame update
     void Start()
@@ -21,27 +29,79 @@ public class nahu : MonoBehaviour
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody>();
         gameOver.enabled = false;
+        playerRenderer = GetComponent<Renderer>();
+        playerMeshRenderer = GetComponent<MeshRenderer>();
         buttonRestart.SetActive(false);
+        controls = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        transform.Translate(new Vector3(-pullForce * Time.deltaTime, 0, 0));
+        //rb.AddForce(new Vector3(-pullForce, 0f, 0f));
+        if (controls)
         {
-            rb.AddForce(new Vector3(0f, 0f, speed));
+            if (Input.GetKey(KeyCode.A))
+            {
+                rb.AddForce(new Vector3(0f, 0f, speed));
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.AddForce(new Vector3(0f, 0f, -speed));
+            }
+            if (moveAble)
+            {
+                if (Input.GetKey(KeyCode.W))
+                {
+                    rb.AddForce(new Vector3(speed, 0f, 0f));
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    rb.AddForce(new Vector3(-speed, 0f, 0f));
+                }
+            }
         }
-        if (Input.GetKey(KeyCode.D))
+        
+        if(transform.position.x < -16.69)
         {
-            rb.AddForce(new Vector3(0f, 0f, -speed));
+            controls = false;
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.AddForce(new Vector3(0f, 0f, speed));
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                rb.AddForce(new Vector3(0f, 0f, -speed));
+            }
+            if (moveAble)
+            {
+                if (Input.GetKey(KeyCode.S))
+                {
+                    rb.AddForce(new Vector3(speed, 0f, 0f));
+                }
+                if (Input.GetKey(KeyCode.W))
+                {
+                    rb.AddForce(new Vector3(-speed, 0f, 0f));
+                }
+            }
         }
-        if (Input.GetKey(KeyCode.W))
+        else
         {
-            rb.AddForce(new Vector3(speed, 0f, 0f));
+            controls = true;
         }
-        if (Input.GetKey(KeyCode.S))
+
+        if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddForce(new Vector3(-speed, 0f, 0f));
+            moveAble = false;
+            playerRenderer.material = transparent;
+            playerMeshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        }
+        else
+        {
+            moveAble = true;
+            playerRenderer.material = normal;
+            playerMeshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         }
         if (transform.position.y < -5 || transform.position.x < -21.598)
         {

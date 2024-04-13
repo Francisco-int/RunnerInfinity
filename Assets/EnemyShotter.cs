@@ -25,6 +25,6 @@ public class EnemyShotter : MonoBehaviour
         GameObject newBala = Instantiate(bala, shotPoint);
         Rigidbody rb = newBala.GetComponent<Rigidbody>();
         rb.AddForce(newBala.transform.up * balaForce, ForceMode.Impulse);
-
+        Debug.Log("Shot");
     }
 }
