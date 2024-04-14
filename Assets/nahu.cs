@@ -20,7 +20,6 @@ public class nahu : MonoBehaviour
     public Renderer playerRenderer;
     public MeshRenderer playerMeshRenderer;
 
-    bool controls;
     bool moveAble;
    
     // Start is called before the first frame update
@@ -32,7 +31,6 @@ public class nahu : MonoBehaviour
         playerRenderer = GetComponent<Renderer>();
         playerMeshRenderer = GetComponent<MeshRenderer>();
         buttonRestart.SetActive(false);
-        controls = true;
     }
 
     // Update is called once per frame
@@ -40,8 +38,7 @@ public class nahu : MonoBehaviour
     {
         transform.Translate(new Vector3(-pullForce * Time.deltaTime, 0, 0));
         //rb.AddForce(new Vector3(-pullForce, 0f, 0f));
-        if (controls)
-        {
+       
             if (Input.GetKey(KeyCode.A))
             {
                 rb.AddForce(new Vector3(0f, 0f, speed));
@@ -61,35 +58,9 @@ public class nahu : MonoBehaviour
                     rb.AddForce(new Vector3(-speed, 0f, 0f));
                 }
             }
-        }
         
-        if(transform.position.x < -16.69)
-        {
-            controls = false;
-            if (Input.GetKey(KeyCode.D))
-            {
-                rb.AddForce(new Vector3(0f, 0f, speed));
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                rb.AddForce(new Vector3(0f, 0f, -speed));
-            }
-            if (moveAble)
-            {
-                if (Input.GetKey(KeyCode.S))
-                {
-                    rb.AddForce(new Vector3(speed, 0f, 0f));
-                }
-                if (Input.GetKey(KeyCode.W))
-                {
-                    rb.AddForce(new Vector3(-speed, 0f, 0f));
-                }
-            }
-        }
-        else
-        {
-            controls = true;
-        }
+         
+       
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -123,3 +94,35 @@ public class nahu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 }
+
+//if(transform.position.x < -16.69)
+//{
+//    controls = false;
+//    if (Input.GetKey(KeyCode.D))
+//    {
+//        rb.AddForce(new Vector3(0f, 0f, speed));
+//    }
+//    if (Input.GetKey(KeyCode.A))
+//    {
+//        rb.AddForce(new Vector3(0f, 0f, -speed));
+//    }
+//    if (moveAble)
+//    {
+//        if (Input.GetKey(KeyCode.S))
+//        {
+//            rb.AddForce(new Vector3(speed, 0f, 0f));
+//        }
+//        if (Input.GetKey(KeyCode.W))
+//        {
+//            rb.AddForce(new Vector3(-speed, 0f, 0f));
+//        }
+//    }
+//}
+//else
+//{
+//    float time = Time.deltaTime;
+//    if(time > 3f)
+//    {
+//        controls = true;
+//    }
+//}

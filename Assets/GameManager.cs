@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     {
         plataformsPassed++;
         uiPlataforms.text =  "Plataforms passed: " + plataformsPassed.ToString();
-        if(plataformsPassed >= 1) 
+        if(plataformsPassed >= 5) 
         {
             SpawnShotter();
         }
